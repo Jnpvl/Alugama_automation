@@ -5,9 +5,13 @@ describe('Inicio de Sesion', () => {
     cy.visit(url);
   });
 
-  it('passes', () => {
-    cy.get('#sades_user').type('JVARGAS');
-    cy.get('#sades_pass').type('JVARGAS');
+  const user = Cypress.env('USER');
+  const password = Cypress.env('PASSWORD');
+  it('Inicio Correcto', () => {
+    cy.get('#sades_user').type(user);
+    cy.get('#sades_pass').type(password);
     cy.get('#Ingresar').click();
+    cy.get('#NombreUsuario', { timeout: 10000 }).should('be.visible')
+
   })
 })

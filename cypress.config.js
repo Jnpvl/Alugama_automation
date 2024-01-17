@@ -6,6 +6,7 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     experimentalRunAllSpecs: true,
+    experimentalStudio:true,
     browser: 'chrome', 
   },
 });
